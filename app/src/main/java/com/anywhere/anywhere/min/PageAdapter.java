@@ -1,5 +1,6 @@
 package com.anywhere.anywhere.min;
 
+import android.app.Activity;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.anywhere.anywhere.MainActivity;
@@ -13,11 +14,11 @@ import com.anywhere.anywhere.min.ui.ThirdFragment;
  */
 public class PageAdapter extends FragmentStatePagerAdapter
 {
-    private MainActivity mainActivity;
-    public PageAdapter(android.support.v4.app.FragmentManager fm, MainActivity mainActivity)
+    private Activity Activity;
+    public PageAdapter(android.support.v4.app.FragmentManager fm, Activity activity)
     {
         super(fm);
-        this.mainActivity = mainActivity;
+        this.Activity = activity;
 
     }
     @Override
