@@ -72,35 +72,28 @@ public class HomeActivity extends Activity {
         new NavigationTabBar.Model.Builder(
             getResources().getDrawable(R.drawable.ic_first),
             Color.parseColor(colors[0]))
-            .title("Heart")
+            .title("Home")
             .build()
     );
     models.add(
         new NavigationTabBar.Model.Builder(
             getResources().getDrawable(R.drawable.ic_second),
             Color.parseColor(colors[1]))
-            .title("Cup")
+            .title("My Travel")
             .build()
     );
     models.add(
         new NavigationTabBar.Model.Builder(
             getResources().getDrawable(R.drawable.ic_third),
             Color.parseColor(colors[2]))
-            .title("Diploma")
+            .title("Share")
             .build()
     );
     models.add(
         new NavigationTabBar.Model.Builder(
             getResources().getDrawable(R.drawable.ic_fourth),
             Color.parseColor(colors[3]))
-            .title("Flag")
-            .build()
-    );
-    models.add(
-        new NavigationTabBar.Model.Builder(
-            getResources().getDrawable(R.drawable.ic_fifth),
-            Color.parseColor(colors[4]))
-            .title("Medal")
+            .title("Setting")
             .build()
     );
     navigationTabBar.setModels(models);
