@@ -1,7 +1,6 @@
 package com.anywhere.anywhere.insang.models.dto.api;
 
-public class PathDTO {
-
+public class PathDTO extends ObjectDTO{
 
   /***
 

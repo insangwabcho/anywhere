@@ -2,7 +2,7 @@ package com.anywhere.anywhere.insang.models.dto.api;
 
 import java.util.List;
 
-public class LocationDTO {
+public class LocationDTO extends ObjectDTO{
 
   public String distance;
 

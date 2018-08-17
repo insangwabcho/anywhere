@@ -1,6 +1,6 @@
 package com.anywhere.anywhere.insang.models.dto.api;
 
-public class PlaceDTO {
+public class PlaceDTO extends ObjectDTO{
 
   public String gpsX;
 
