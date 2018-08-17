@@ -1,30 +1,56 @@
 package com.anywhere.anywhere.insang.models.dao.manager;
 
 import com.anywhere.anywhere.insang.models.dto.api.DayScheduleDTO;
-import com.anywhere.anywhere.insang.models.dto.api.ObjectDTO;
-import com.anywhere.anywhere.insang.models.dto.api.TripDTO;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TripManager {
 
-  private List<ObjectDTO> trip;
-  private TripDTO dto;
+  private static TripManager instance;
+  private static ScheduleManager scheduleManager;
+  private List<DayScheduleDTO> trip;
 
-  public TripManager(List<ObjectDTO> trip) {
-    this.trip = trip;
+  private TripManager(){ }
+
+  synchronized public static TripManager getInstance(){
+    if (instance == null)
+      instance= new TripManager();
+    return instance;
   }
 
-  public void insertDaySchedule(ObjectDTO dto){
+  synchronized public ScheduleManager getScheduleManager(int day){
+    if (scheduleManager == null){
+      scheduleManager= new ScheduleManager(trip.get(day));
+    }
+    return scheduleManager;
+  }
+
+  //region Trip Manager
+
+  public void newTrip(){
+    trip= new ArrayList<>();
+  }
+
+  public void insertDaySchedule(DayScheduleDTO dto){
     trip.add(dto);
   }
 
-  public void removeDaySchedule(ObjectDTO dto){
+  public void removeDaySchedule(DayScheduleDTO dto){
     trip.remove(dto);
   }
 
-  public ObjectDTO getDaySchedule(int day){
+  public DayScheduleDTO getDaySchedule(int day){
     return trip.get(day);
   }
 
+  //endregion
+
+  //region Schedule Manager
+
+  public void newSchedule(){
+
+  }
+
+  //endregion
 }
