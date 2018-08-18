@@ -1,6 +1,10 @@
 package com.anywhere.anywhere.min;
 
+import android.annotation.SuppressLint;
+import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -9,11 +13,13 @@ import android.view.View;
 
 import com.anywhere.anywhere.R;
 import com.anywhere.anywhere.min.PageAdapter;
+import com.anywhere.anywhere.min.config.AnyWhere;
 
 public class MinActivity extends AppCompatActivity implements View.OnClickListener{
 
     private ViewPager viewPager;
     private TabLayout tabLayout;
+    private final int MY_PERMISSION_REQUEST_STORAGE = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +31,8 @@ public class MinActivity extends AppCompatActivity implements View.OnClickListen
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.icon2));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.icon3));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.icon4));
-        tabLayout.setSelectedTabIndicatorHeight(0);
+        //tabLayout.setSelectedTabIndicatorHeight(0);
+        tabLayout.setSelectedTabIndicatorColor(Color.GRAY);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
 
@@ -49,10 +56,49 @@ public class MinActivity extends AppCompatActivity implements View.OnClickListen
             }
         });
         setViewPager();
+        checkPermision(AnyWhere.PERMISSIONS);
+
+
+
+
+
     }
+
+    public void checkPermision(String[] permision) {
+
+        requestPermissions(permision, MY_PERMISSION_REQUEST_STORAGE);
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+        switch (requestCode) {
+
+            case MY_PERMISSION_REQUEST_STORAGE:
+
+                int cnt = permissions.length;
+
+                for (int i = 0; i < cnt; i++) {
+
+                    if (grantResults[i] == PackageManager.PERMISSION_GRANTED) {
+
+                    } else {
+
+                    }
+
+                }
+
+                break;
+
+        }
+
+    }
+
 
     public void setViewPager(){
         viewPager = (ViewPager) findViewById(R.id.viewpager);
+        viewPager.setBackgroundColor(R.color.colorBack);
         viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(),this));
         viewPager.setCurrentItem(0);
         tabLayout.getTabAt(0).getIcon().setAlpha(50);
