@@ -1,4 +1,4 @@
-package com.anywhere.anywhere.insang.models.dto.api;
+package com.anywhere.anywhere.insang.models.dto;
 
 import java.util.List;
 

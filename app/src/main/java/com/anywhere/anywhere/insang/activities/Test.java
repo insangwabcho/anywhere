@@ -1,7 +1,7 @@
-package com.anywhere.anywhere.insang.src;
+package com.anywhere.anywhere.insang.activities;
 
 import com.anywhere.anywhere.insang.src.manager.TripManager;
-import com.anywhere.anywhere.insang.models.dto.api.ObjectDTO;
+import com.anywhere.anywhere.insang.models.dto.ObjectDTO;
 
 public class Test {
 
@@ -13,6 +13,7 @@ public class Test {
         manager.insertSchedule(1,1, new ObjectDTO());
 
         manager.removeSchedule(1, 2);
+
 
     }
 

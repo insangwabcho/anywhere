@@ -1,10 +1,10 @@
 //region # 18.08.18 생성 --insang
 // endregion
 
-package com.anywhere.anywhere.insang.src;
+package com.anywhere.anywhere.insang.src.Trip;
 
-import com.anywhere.anywhere.insang.models.dto.api.DayScheduleDTO;
-import com.anywhere.anywhere.insang.models.dto.api.ObjectDTO;
+import com.anywhere.anywhere.insang.models.dto.DayScheduleDTO;
+import com.anywhere.anywhere.insang.models.dto.ObjectDTO;
 
 import java.util.List;
 
@@ -16,6 +16,8 @@ public class MyTrip {
     private final int settingIndex= settingDay-1;
 
     //endregion
+
+    //region # 여행일정 세팅
 
     //region # TripDay Set
 
@@ -75,6 +77,7 @@ public class MyTrip {
 
     //endregion
 
+    //endregion
 
     //region # 클래스 내부적으로 사용하는 메소드
 
