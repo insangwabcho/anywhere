@@ -1,9 +1,11 @@
 package com.anywhere.anywhere.min;
 
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.anywhere.anywhere.MainActivity;
+
 import com.anywhere.anywhere.min.ui.FirstFragment;
 import com.anywhere.anywhere.min.ui.FourthFragment;
 import com.anywhere.anywhere.min.ui.SecondFragment;
