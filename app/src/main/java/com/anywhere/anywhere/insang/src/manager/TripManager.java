@@ -8,7 +8,7 @@ import com.anywhere.anywhere.insang.src.Trip.MyTrip;
 
 public class TripManager extends MyTrip {
 
-    //region # 싱글톤 처리
+    //region # 싱글톤 처리 #
     private static TripManager instance;
 
     private TripManager() {
@@ -21,20 +21,25 @@ public class TripManager extends MyTrip {
     }
     //endregion
 
-    //region # 여행 manager 기능
+    //region # 여행 manager 기능 #
 
     //기본 하루짜리 새로운 여행을 생성
     public void newTrip() {
-        this.newDaySchedule();
+        super.newDaySchedule();
+    }
+
+    //일별 여행 전부삭제
+    public void removeDaySchedule(int day){
+        super.removeDaySchedule(day);
     }
 
     //일정 등록
     public void insertSchedule(int day, int sort, ObjectDTO schedule) {
-        this.setDay(day);
-        this.insertSchedule(sort, schedule);
+        super.setDay(day);
+        super.insertSchedule(sort, schedule);
     }
 
-    //여행일정 삭제
+    //일정 삭제
     public void removeSchedule(int day, int sort){
         this.setDay(day);
         this.removeSchedule(sort);
@@ -42,7 +47,7 @@ public class TripManager extends MyTrip {
 
     //endregion
 
-    //region # 서버 및 DB 관련 기능
+    //region # 서버 및 DB 관련 기능 #
 
     //endregion
 
