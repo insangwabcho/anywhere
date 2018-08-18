@@ -2,37 +2,37 @@ package com.anywhere.anywhere.insang.models.dto;
 
 public class ObjectDTO{
 
-  public int sortNo;
+  private int sortNo;
 
-  public String name;
+  private String name;
 
-  public String infoUrl;
+  private String infoUrl;
 
-  public int getSortNo() {
+  protected int getSortNo() {
     return sortNo;
   }
 
-  public void setSortNo(int sortNo) {
+  protected void setSortNo(int sortNo) {
     this.sortNo = sortNo;
   }
 
-  public String getName() {
+  protected String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  protected void setName(String name) {
     this.name = name;
   }
 
-  public String getInfoUrl() {
+  protected String getInfoUrl() {
     return infoUrl;
   }
 
-  public void setInfoUrl(String infoUrl) {
+  protected void setInfoUrl(String infoUrl) {
     this.infoUrl = infoUrl;
   }
 
-  public ObjectDTO(int sortNo, String name, String infoUrl) {
+  protected ObjectDTO(int sortNo, String name, String infoUrl) {
     this.sortNo = sortNo;
     this.name = name;
     this.infoUrl = infoUrl;

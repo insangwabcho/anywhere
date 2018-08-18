@@ -82,7 +82,7 @@ public class MyTrip {
     //region # 클래스 내부적으로 사용하는 메소드
 
     private List<ObjectDTO> getDaySchedule(){
-        return daySchedule.get(settingIndex).schedule;
+        return daySchedule.get(settingIndex).getSchedule();
     }
 
     //endregion
