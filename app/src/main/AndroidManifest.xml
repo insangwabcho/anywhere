@@ -8,9 +8,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyBwiIL2BeuJmHkyDpZ3JIB3vVvzAVffDaY"/>
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,8 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".insang.activities.HomeActivity"></activity>
-        <activity android:name=".min.MinActivity"></activity>
+        <activity android:name=".insang.activities.HomeActivity" />
+        <activity android:name=".min.MinActivity" />
+        <activity android:name=".insang.activities.TestActivity"></activity>
     </application>
 
 </manifest>
