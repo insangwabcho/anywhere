@@ -1,5 +1,6 @@
 package com.anywhere.anywhere.insang.models.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DayScheduleDTO extends ObjectDTO {
@@ -14,11 +15,10 @@ public class DayScheduleDTO extends ObjectDTO {
   }
 
   public List<ObjectDTO> getSchedule() {
-    return schedule;
-  }
+    if (schedule == null){
 
-  public void setSchedule(List<ObjectDTO> schedule) {
-    this.schedule = schedule;
+    }
+    return schedule;
   }
 
   public int getSortNo() {

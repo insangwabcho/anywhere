@@ -1,18 +1,37 @@
 package com.anywhere.anywhere.insang.activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.anywhere.anywhere.R;
+import com.anywhere.anywhere.insang.models.dto.DayScheduleDTO;
+import com.anywhere.anywhere.insang.models.dto.ObjectDTO;
+import com.anywhere.anywhere.insang.models.dto.PathDTO;
 import com.anywhere.anywhere.insang.models.dto.PlaceDTO;
 import com.anywhere.anywhere.insang.src.manager.TripManager;
 
+import java.util.List;
+
 public class TestActivity extends AppCompatActivity {
+
+  Button btnHomeActivity;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.insang_test);
+
+    btnHomeActivity= (Button)findViewById(R.id.btnHomeActivity);
+    btnHomeActivity.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        Intent intent= new Intent(TestActivity.this, HomeActivity.class);
+        startActivity(intent);
+      }
+    });
 
     TripManager manager = TripManager.getInstance();
     manager.newTrip();
@@ -28,9 +47,19 @@ public class TestActivity extends AppCompatActivity {
     place.setPoiNm("poiNm");
     place.setSortNo(0);
 
-    manager.insertSchedule(day, 1, place);
+    manager.getSize();
 
-    System.out.println("hello");
+    manager.insertSchedule(1, 1, place);
+
+    DayScheduleDTO day1Schedule= manager.getScheduleList(1);
+
+    manager.addTripDay();
+
+    manager.insertSchedule(2, 1, place);
+
+    DayScheduleDTO day2Schedule= manager.getScheduleList(2);
+
+    List<DayScheduleDTO> trip1= manager.getTrip();
 
   }
 }

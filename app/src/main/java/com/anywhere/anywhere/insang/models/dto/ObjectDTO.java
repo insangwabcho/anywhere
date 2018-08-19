@@ -1,12 +1,14 @@
 package com.anywhere.anywhere.insang.models.dto;
 
-public class ObjectDTO{
+public class ObjectDTO {
 
   private int sortNo;
 
   private String name;
 
   private String infoUrl;
+
+  private int division;
 
   protected int getSortNo() {
     return sortNo;
@@ -30,6 +32,14 @@ public class ObjectDTO{
 
   protected void setInfoUrl(String infoUrl) {
     this.infoUrl = infoUrl;
+  }
+
+  protected int getDivision() {
+    return division;
+  }
+
+  protected void setDivision(int division) {
+    this.division = division;
   }
 
   protected ObjectDTO(int sortNo, String name, String infoUrl) {
