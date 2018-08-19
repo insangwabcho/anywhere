@@ -15,7 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyCpx9UlJgBiqQMn7fslqM1GR1hTS9V2uK0"/>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyDP-NlEZw2CxwxmuhYXEaoxVqv9nrHfaE8"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

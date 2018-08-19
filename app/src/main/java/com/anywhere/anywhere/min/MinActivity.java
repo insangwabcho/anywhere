@@ -26,11 +26,12 @@ public class MinActivity extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.min_activity);
 
+
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.icon1));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.icon2));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.icon3));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.icon4));
+        tabLayout.addTab(tabLayout.newTab().setIcon(getApplicationContext().getDrawable(R.drawable.icon1)));
+        tabLayout.addTab(tabLayout.newTab().setIcon(getApplicationContext().getDrawable(R.drawable.icon2)));
+        tabLayout.addTab(tabLayout.newTab().setIcon(getApplicationContext().getDrawable(R.drawable.icon3)));
+        tabLayout.addTab(tabLayout.newTab().setIcon(getApplicationContext().getDrawable(R.drawable.icon4)));
         //tabLayout.setSelectedTabIndicatorHeight(0);
         tabLayout.setSelectedTabIndicatorColor(Color.GRAY);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
@@ -98,7 +99,7 @@ public class MinActivity extends AppCompatActivity implements View.OnClickListen
 
     public void setViewPager(){
         viewPager = (ViewPager) findViewById(R.id.viewpager);
-        viewPager.setBackgroundColor(R.color.colorBack);
+        viewPager.setBackgroundColor(getResources().getColor(R.color.colorBack));
         viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(),this));
         viewPager.setCurrentItem(0);
         tabLayout.getTabAt(0).getIcon().setAlpha(50);
