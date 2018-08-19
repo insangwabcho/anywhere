@@ -93,8 +93,12 @@ public class MyTrip {
 
   //endregion
 
+  //region # 기타기능
+
   public void getSize() {
     System.out.println(daySchedule.size());
     System.out.println(settingDay);
   }
+
+  //endregion
 }

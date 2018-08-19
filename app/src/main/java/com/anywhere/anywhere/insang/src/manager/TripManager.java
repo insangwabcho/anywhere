@@ -1,5 +1,4 @@
-//region # 18.08.18 생성 --insang
-// endregion
+/*** # 18.08.18 생성 --insang ***/
 
 package com.anywhere.anywhere.insang.src.manager;
 
@@ -8,6 +7,31 @@ import com.anywhere.anywhere.insang.models.dto.ObjectDTO;
 import com.anywhere.anywhere.insang.src.Trip.MyTrip;
 
 import java.util.List;
+
+//region # 사용법
+
+/*
+   Example)
+
+     TripManager myTrip1= TripManager.getInstance(); //매니저 초기화
+
+     myTrip1.newTrip(); //여행 생성
+
+     myTrip1.insertSchedule(1, 1, place); //첫째날 첫번째의 일정오브젝트추가(day, sort, schedule)
+
+     myTrip1.removeSchedule(1, 1); //첫째날 첫번째 일정 삭제(day, sort)
+
+     myTrip1.removeDaySchedule(1); //첫째날 모든 일정
+
+     myTrip1.addTripDay(); //여행일정 하루 더 추가(뒤로붙음)
+
+     myTrip1.getTrip(); //여행 모든자료 가져오기 (return: List<DayScheduleDTO>)
+
+     myTrip1.getScheduleList(1); //첫째날 일정목록 가져오기 (return: DayScheduleDTO)
+
+*/
+
+//endregion
 
 public class TripManager extends MyTrip {
 
@@ -64,8 +88,12 @@ public class TripManager extends MyTrip {
 
   //endregion
 
+  //region # 기타 기능
 
   public void getSize() {
     super.getSize();
   }
+
+  //endregion
+
 }
