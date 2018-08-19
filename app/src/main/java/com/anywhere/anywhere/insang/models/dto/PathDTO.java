@@ -9,25 +9,25 @@ public class PathDTO extends ObjectDTO {
 
    ***/
 
-  public String fid;
+  private String fid;
 
-  public String fname;
+  private String fname;
 
-  public String fx;
+  private String fx;
 
-  public String fy;
+  private String fy;
 
-  public String routeId;
+  private String routeId;
 
-  public String routeNm;
+  private String routeNm;
 
-  public String tid;
+  private String tid;
 
-  public String tname;
+  private String tname;
 
-  public String tx;
+  private String tx;
 
-  public String ty;
+  private String ty;
 
   public String getFid() {
     return fid;
@@ -110,26 +110,26 @@ public class PathDTO extends ObjectDTO {
   }
 
   public int getSortNo() {
-    return super.sortNo;
+    return super.getSortNo();
   }
 
   public void setSortNo(int sortNo) {
-    super.sortNo = sortNo;
+    super.setSortNo(sortNo);
   }
 
   public String getName() {
-    return super.name;
+    return super.getName();
   }
 
   public void setName(String name) {
-    super.name = name;
+    super.setName(name);
   }
 
   public String getInfoUrl() {
-    return super.infoUrl;
+    return super.getInfoUrl();
   }
 
   public void setInfoUrl(String infoUrl) {
-    super.infoUrl = infoUrl;
+    super.setInfoUrl(infoUrl);
   }
 }

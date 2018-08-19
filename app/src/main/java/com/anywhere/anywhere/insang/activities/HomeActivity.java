@@ -33,7 +33,7 @@ public class HomeActivity extends Activity {
     viewPager.setAdapter(new PagerAdapter() {
       @Override
       public int getCount() {
-        return 5;
+        return 4;
       }
 
       @Override

@@ -1,23 +1,65 @@
 package com.anywhere.anywhere.insang.activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.anywhere.anywhere.R;
+import com.anywhere.anywhere.insang.models.dto.DayScheduleDTO;
+import com.anywhere.anywhere.insang.models.dto.ObjectDTO;
+import com.anywhere.anywhere.insang.models.dto.PathDTO;
 import com.anywhere.anywhere.insang.models.dto.PlaceDTO;
 import com.anywhere.anywhere.insang.src.manager.TripManager;
 
+import java.util.List;
+
 public class TestActivity extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.insang_test);
+  Button btnHomeActivity;
 
-        TripManager manager= TripManager.getInstance();
-        manager.newTrip();
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.insang_test);
 
-        PlaceDTO place= new PlaceDTO();
+    btnHomeActivity= (Button)findViewById(R.id.btnHomeActivity);
+    btnHomeActivity.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        Intent intent= new Intent(TestActivity.this, HomeActivity.class);
+        startActivity(intent);
+      }
+    });
 
-    }
+    TripManager manager = TripManager.getInstance();
+    manager.newTrip();
+
+    int day = 1;
+
+    PlaceDTO place = new PlaceDTO();
+    place.setGpsX("12.222222");
+    place.setGpsY("13.333333");
+    place.setInfoUrl("http://test.com/test/test");
+    place.setName("testName");
+    place.setPoiId("PoiId");
+    place.setPoiNm("poiNm");
+    place.setSortNo(0);
+
+    manager.getSize();
+
+    manager.insertSchedule(1, 1, place);
+
+    DayScheduleDTO day1Schedule= manager.getScheduleList(1);
+
+    manager.addTripDay();
+
+    manager.insertSchedule(2, 1, place);
+
+    DayScheduleDTO day2Schedule= manager.getScheduleList(2);
+
+    List<DayScheduleDTO> trip1= manager.getTrip();
+
+  }
 }

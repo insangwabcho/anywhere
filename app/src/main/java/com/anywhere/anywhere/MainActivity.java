@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.anywhere.anywhere.insang.activities.HomeActivity;
+import com.anywhere.anywhere.insang.activities.TestActivity;
 import com.anywhere.anywhere.min.MinActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     btnInsang.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent intent= new Intent(MainActivity.this, HomeActivity.class);
+            Intent intent= new Intent(MainActivity.this, TestActivity.class);
             startActivity(intent);
             finish();
         }

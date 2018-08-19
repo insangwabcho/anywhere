@@ -4,11 +4,11 @@ import java.util.List;
 
 public class LocationDTO extends ObjectDTO{
 
-  public String distance;
+  private String distance;
 
-  public List<PathDTO> pathList;
+  private List<PathDTO> pathList;
 
-  public String time;
+  private String time;
 
   public LocationDTO() {
   }
@@ -45,27 +45,27 @@ public class LocationDTO extends ObjectDTO{
   }
 
   public int getSortNo() {
-    return super.sortNo;
+    return super.getSortNo();
   }
 
   public void setSortNo(int sortNo) {
-    super.sortNo = sortNo;
+    super.setSortNo(sortNo);
   }
 
   public String getName() {
-    return super.name;
+    return super.getName();
   }
 
   public void setName(String name) {
-    super.name = name;
+    super.setName(name);
   }
 
   public String getInfoUrl() {
-    return super.infoUrl;
+    return super.getInfoUrl();
   }
 
   public void setInfoUrl(String infoUrl) {
-    super.infoUrl = infoUrl;
+    super.setInfoUrl(infoUrl);
   }
 
 }
