@@ -13,11 +13,14 @@ import com.anywhere.anywhere.insang.models.dto.ObjectDTO;
 import com.anywhere.anywhere.insang.models.dto.PathDTO;
 import com.anywhere.anywhere.insang.models.dto.PlaceDTO;
 import com.anywhere.anywhere.insang.src.manager.TripManager;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.odsay.odsayandroidsdk.API;
 import com.odsay.odsayandroidsdk.ODsayData;
 import com.odsay.odsayandroidsdk.ODsayService;
 import com.odsay.odsayandroidsdk.OnResultCallbackListener;
 
+import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
 
@@ -39,45 +42,12 @@ public class TestActivity extends AppCompatActivity {
       }
     });
 
-    TripManager manager = TripManager.getInstance();
-    manager.newTrip();
-
-    int day = 1;
-
-    PlaceDTO place = new PlaceDTO();
-    place.setGpsX("12.222222");
-    place.setGpsY("13.333333");
-    place.setInfoUrl("http://test.com/test/test");
-    place.setScheduleName("testName");
-    place.setPoiId("PoiId");
-    place.setPoiNm("poiNm");
-    place.setSortNo(0);
-
-    manager.getSize();
-
-    manager.insertSchedule(1, 1, place);
-
-    DayScheduleDTO day1Schedule= manager.getScheduleList(1);
-
-    manager.addTripDay();
-
-    manager.insertSchedule(2, 1, place);
-
-    DayScheduleDTO day2Schedule= manager.getScheduleList(2);
-
-    List<DayScheduleDTO> trip1= manager.getTrip();
-
-
-
-
-
-
     ODsayService ods= ODsayService.init(this, this.getString(R.string.odsay_key));
 
-    String sx= "126.96532830000001";
     String sy= "37.5338038";
-    String ex= "127.001892";
+    String sx= "126.96532830000001";
     String ey= "37.58208";
+    String ex= "127.001892";
     String opt= "0";
     String searchtype= "0";
     String searchpathtype= "0";
@@ -88,7 +58,7 @@ public class TestActivity extends AppCompatActivity {
     ods.requestSearchPubTransPath(sx, sy, ex, ey, opt, searchtype, searchpathtype, new OnResultCallbackListener() {
       @Override
       public void onSuccess(ODsayData oDsayData, API api) {
-        System.out.println(oDsayData.getJson());
+        PathDTO dto= jsonParseTest(oDsayData.getJson().toString(), PathDTO.class);
       }
 
       @Override
@@ -97,9 +67,10 @@ public class TestActivity extends AppCompatActivity {
       }
     });
 
+  }
 
-
-
-
+  public <T> T jsonParseTest(String json, Class<T> dto){
+    Gson gson= new GsonBuilder().create();
+    return gson.fromJson(json, dto);
   }
 }
