@@ -1,12 +1,11 @@
 package com.anywhere.anywhere.insang.activities;
 
-import android.app.Activity;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 
 import com.anywhere.anywhere.R;
-import com.anywhere.anywhere.insang.src.manager.TripManager;
 import com.anywhere.anywhere.insang.models.dto.ObjectDTO;
+import com.anywhere.anywhere.insang.src.manager.TripManager;
 import com.odsay.odsayandroidsdk.API;
 import com.odsay.odsayandroidsdk.ODsayData;
 import com.odsay.odsayandroidsdk.ODsayService;
@@ -17,7 +16,6 @@ public class Test {
   public void test() {
 
 
-
     TripManager manager = TripManager.getInstance();
 
     manager.newTrip();
@@ -25,19 +23,17 @@ public class Test {
 
     manager.removeSchedule(1, 2);
 
-    Context context= new AppCompatActivity();
+    Context context = new AppCompatActivity();
 
-    ODsayService ods= ODsayService.init(context, context.getString(R.string.odsay_key));
+    ODsayService ods = ODsayService.init(context, context.getString(R.string.odsay_key));
 
-    String sx= "37.5338038";
-    String sy= "126.96532830000001";
-    String ex= "37.58208";
-    String ey= "127.001892";
-    String opt= "0";
-    String searchtype= "0";
-    String searchpathtype= "0";
-
-
+    String sx = "37.5338038";
+    String sy = "126.96532830000001";
+    String ex = "37.58208";
+    String ey = "127.001892";
+    String opt = "0";
+    String searchtype = "0";
+    String searchpathtype = "0";
 
 
     ods.requestSearchPubTransPath(sx, sy, ex, ey, opt, searchtype, searchpathtype, new OnResultCallbackListener() {

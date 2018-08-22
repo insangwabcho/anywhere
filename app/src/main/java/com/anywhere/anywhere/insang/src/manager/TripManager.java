@@ -4,7 +4,7 @@ package com.anywhere.anywhere.insang.src.manager;
 
 import com.anywhere.anywhere.insang.models.dto.DayScheduleDTO;
 import com.anywhere.anywhere.insang.models.dto.ObjectDTO;
-import com.anywhere.anywhere.insang.src.Trip.MyTrip;
+import com.anywhere.anywhere.insang.src.function.Trip;
 
 import java.util.List;
 
@@ -33,7 +33,7 @@ import java.util.List;
 
 //endregion
 
-public class TripManager extends MyTrip {
+public class TripManager extends Trip {
 
   //region # 싱글톤 처리 #
   private static TripManager instance;
@@ -54,11 +54,11 @@ public class TripManager extends MyTrip {
     super.newDaySchedule();
   }
 
-  public List<DayScheduleDTO> getTrip(){
+  public List<DayScheduleDTO> getTrip() {
     return super.getTrip();
   }
 
-  public void addTripDay(){ //기본 여행에 새로 하루 더 추가
+  public void addTripDay() { //기본 여행에 새로 하루 더 추가
     super.addTripDay();
   }
 
@@ -76,10 +76,9 @@ public class TripManager extends MyTrip {
     super.removeSchedule(sort);
   }
 
-  public DayScheduleDTO getScheduleList(int day){ //일정 목록 가져오기
+  public DayScheduleDTO getScheduleList(int day) { //일정 목록 가져오기
     return super.getScheduleList(day);
   }
-
 
 
   //endregion

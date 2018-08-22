@@ -2,7 +2,7 @@ package com.anywhere.anywhere.insang.models.dto;
 
 import java.util.List;
 
-public class LocationDTO extends ObjectDTO{
+public class LocationDTO extends ObjectDTO {
 
   private String distance;
 
@@ -68,8 +68,20 @@ public class LocationDTO extends ObjectDTO{
     super.setInfoUrl(infoUrl);
   }
 
-  public int getDivision() { return super.getDivision(); }
+  public int getDivision() {
+    return super.getDivision();
+  }
 
-  public void setDivision(int division) { super.setDivision(division); }
+  public void setDivision(int division) {
+    super.setDivision(division);
+  }
+
+  public int getScheduleTime() {
+    return super.getScheduleTime();
+  }
+
+  public void setScheduleTime(int scheduleTime) {
+    super.setScheduleTime(scheduleTime);
+  }
 
 }

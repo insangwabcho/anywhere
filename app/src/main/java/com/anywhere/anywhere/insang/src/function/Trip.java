@@ -1,7 +1,7 @@
 //region # 18.08.18 생성 --insang
 // endregion
 
-package com.anywhere.anywhere.insang.src.Trip;
+package com.anywhere.anywhere.insang.src.function;
 
 import com.anywhere.anywhere.insang.models.dto.DayScheduleDTO;
 import com.anywhere.anywhere.insang.models.dto.ObjectDTO;
@@ -9,18 +9,20 @@ import com.anywhere.anywhere.insang.models.dto.ObjectDTO;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyTrip {
+public class Trip {
 
   //region # Member
   private List<DayScheduleDTO> daySchedule;
   private int settingDay;
+  protected Trip() {
+  }
 
   //endregion
 
   //region # 여행 세팅
 
-  protected List<DayScheduleDTO> getTrip(){
-    if (daySchedule == null){
+  protected List<DayScheduleDTO> getTrip() {
+    if (daySchedule == null) {
       return null;
     }
     return daySchedule;
@@ -54,7 +56,7 @@ public class MyTrip {
   protected void setDay(int day) { //일정을 관리할 날짜를 설정
     int index = day - 1;
     settingDay = index;
-    System.out.println("SettingDay Index: "+index);
+    System.out.println("SettingDay Index: " + index);
   }
 
   protected void insertSchedule(int sort, ObjectDTO schedule) {
@@ -62,7 +64,7 @@ public class MyTrip {
     int index = sort - 1;
     List<DayScheduleDTO> dto = getDaySchedule();
 
-    DayScheduleDTO dayDTO= dto.get(settingDay);
+    DayScheduleDTO dayDTO = dto.get(settingDay);
 
     dayDTO.getSchedule().add(schedule);
 
@@ -73,13 +75,13 @@ public class MyTrip {
     int index = sort - 1;
     List<DayScheduleDTO> dto = getDaySchedule();
 
-    DayScheduleDTO dayDTO= dto.get(settingDay);
+    DayScheduleDTO dayDTO = dto.get(settingDay);
 
     dayDTO.getSchedule().remove(index);
   }
 
-  protected DayScheduleDTO getScheduleList(int day){
-    int index= day-1;
+  protected DayScheduleDTO getScheduleList(int day) {
+    int index = day - 1;
     return daySchedule.get(index);
   }
 

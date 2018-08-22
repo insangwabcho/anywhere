@@ -15,8 +15,8 @@ public class DayScheduleDTO extends ObjectDTO {
   }
 
   public List<ObjectDTO> getSchedule() {
-    if (schedule == null){
-      schedule= new ArrayList<>();
+    if (schedule == null) {
+      schedule = new ArrayList<>();
     }
     return schedule;
   }
@@ -45,8 +45,20 @@ public class DayScheduleDTO extends ObjectDTO {
     super.setInfoUrl(infoUrl);
   }
 
-  public int getDivision() { return super.getDivision(); }
+  public int getDivision() {
+    return super.getDivision();
+  }
 
-  public void setDivision(int division) { super.setDivision(division); }
+  public void setDivision(int division) {
+    super.setDivision(division);
+  }
+
+  public int getScheduleTime() {
+    return super.getScheduleTime();
+  }
+
+  public void setScheduleTime(int scheduleTime) {
+    super.setScheduleTime(scheduleTime);
+  }
 
 }

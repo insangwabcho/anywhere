@@ -9,11 +9,11 @@ import java.net.URLEncoder;
 
 public class ApiClient {
 
-  public final String ServiceKey= "=sFpp%2BcgoD2n33A7ib82KSC0KBdwQF20HXhcmUqOe6F3kLzQLTB3OfU8N6w306XY9ugyig3ufjF1Q%2BpoZ%2Btfpmw%3D%3D";
+  public final String ServiceKey = "=sFpp%2BcgoD2n33A7ib82KSC0KBdwQF20HXhcmUqOe6F3kLzQLTB3OfU8N6w306XY9ugyig3ufjF1Q%2BpoZ%2Btfpmw%3D%3D";
 
   // url = "http://ws.bus.go.kr/api/rest/pathinfo/getLocationInfo"
 
-  public void getLocationInfo(String placeName) throws IOException{
+  public void getLocationInfo(String placeName) throws IOException {
 
     StringBuilder urlBuilder = new StringBuilder();
     int resCode; // responce code
@@ -29,7 +29,7 @@ public class ApiClient {
     conn.setRequestMethod("GET");
     conn.setRequestProperty("Content-type", "application/json");
 
-    resCode= conn.getResponseCode();
+    resCode = conn.getResponseCode();
 
     BufferedReader rd;
     if (conn.getResponseCode() >= 200 && conn.getResponseCode() <= 300) {
@@ -46,7 +46,7 @@ public class ApiClient {
     rd.close();
     conn.disconnect();
 
-    result= sb.toString();
+    result = sb.toString();
   }
 
 }

@@ -7,6 +7,8 @@ public class PathDTO extends ObjectDTO {
 
   //region # superclass
 
+  private ResultBean result;
+
   public int getSortNo() {
     return super.getSortNo();
   }
@@ -39,11 +41,17 @@ public class PathDTO extends ObjectDTO {
     super.setDivision(division);
   }
 
+  public int getScheduleTime() {
+    return super.getScheduleTime();
+  }
+
   //endregion
 
   //region # Member
 
-  private ResultBean result;
+  public void setScheduleTime(int scheduleTime) {
+    super.setScheduleTime(scheduleTime);
+  }
 
   public ResultBean getResult() {
     return result;

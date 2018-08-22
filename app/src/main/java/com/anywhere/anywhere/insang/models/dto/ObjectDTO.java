@@ -10,6 +10,20 @@ public class ObjectDTO {
 
   private int division;
 
+  /***
+   * 일정 소요시간(분)
+   */
+  private int scheduleTime;
+
+  protected ObjectDTO(int sortNo, String scheduleName, String infoUrl) {
+    this.sortNo = sortNo;
+    this.scheduleName = scheduleName;
+    this.infoUrl = infoUrl;
+  }
+
+  public ObjectDTO() {
+  }
+
   protected int getSortNo() {
     return sortNo;
   }
@@ -42,13 +56,12 @@ public class ObjectDTO {
     this.division = division;
   }
 
-  protected ObjectDTO(int sortNo, String scheduleName, String infoUrl) {
-    this.sortNo = sortNo;
-    this.scheduleName = scheduleName;
-    this.infoUrl = infoUrl;
+  protected int getScheduleTime() {
+    return scheduleTime;
   }
 
-  public ObjectDTO() {
+  protected void setScheduleTime(int scheduleTime) {
+    this.scheduleTime = scheduleTime;
   }
 
 
