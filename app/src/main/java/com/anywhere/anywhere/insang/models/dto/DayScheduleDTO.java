@@ -16,7 +16,7 @@ public class DayScheduleDTO extends ObjectDTO {
 
   public List<ObjectDTO> getSchedule() {
     if (schedule == null){
-
+      schedule= new ArrayList<>();
     }
     return schedule;
   }
