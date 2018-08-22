@@ -48,7 +48,7 @@ public class TestActivity extends AppCompatActivity {
     place.setGpsX("12.222222");
     place.setGpsY("13.333333");
     place.setInfoUrl("http://test.com/test/test");
-    place.setName("testName");
+    place.setScheduleName("testName");
     place.setPoiId("PoiId");
     place.setPoiNm("poiNm");
     place.setSortNo(0);
