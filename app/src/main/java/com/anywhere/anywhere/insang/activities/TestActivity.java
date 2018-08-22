@@ -7,9 +7,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.anywhere.anywhere.R;
-import com.anywhere.anywhere.insang.models.dto.PlaceDTO;
-import com.anywhere.anywhere.insang.src.function.Route;
-import com.anywhere.anywhere.insang.src.manager.PathManager;
 
 public class TestActivity extends AppCompatActivity {
 
@@ -20,7 +17,8 @@ public class TestActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.insang_test);
 
-    btnHomeActivity = (Button) findViewById(R.id.btnHomeActivity);
+    btnHomeActivity = findViewById(R.id.btnHomeActivity);
+
     btnHomeActivity.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
@@ -28,11 +26,6 @@ public class TestActivity extends AppCompatActivity {
         startActivity(intent);
       }
     });
-
-    PathManager pfManager = PathManager.getInstance(this);
-    pfManager.searchForPath(new PlaceDTO(), new PlaceDTO(), Route.OPT_SHORTEST);
-
-
 
   }
 }
