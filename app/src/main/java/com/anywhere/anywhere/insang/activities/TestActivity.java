@@ -19,6 +19,7 @@ import com.odsay.odsayandroidsdk.ODsayService;
 import com.odsay.odsayandroidsdk.OnResultCallbackListener;
 
 import java.util.List;
+import java.util.Map;
 
 public class TestActivity extends AppCompatActivity {
 

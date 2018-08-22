@@ -52,12 +52,12 @@ public class LocationDTO extends ObjectDTO{
     super.setSortNo(sortNo);
   }
 
-  public String getName() {
-    return super.getName();
+  public String getScheduleName() {
+    return super.getScheduleName();
   }
 
-  public void setName(String name) {
-    super.setName(name);
+  public void setScheduleName(String name) {
+    super.setScheduleName(name);
   }
 
   public String getInfoUrl() {
@@ -67,5 +67,9 @@ public class LocationDTO extends ObjectDTO{
   public void setInfoUrl(String infoUrl) {
     super.setInfoUrl(infoUrl);
   }
+
+  public int getDivision() { return super.getDivision(); }
+
+  public void setDivision(int division) { super.setDivision(division); }
 
 }

@@ -4,7 +4,7 @@ public class ObjectDTO {
 
   private int sortNo;
 
-  private String name;
+  private String scheduleName;
 
   private String infoUrl;
 
@@ -18,12 +18,12 @@ public class ObjectDTO {
     this.sortNo = sortNo;
   }
 
-  protected String getName() {
-    return name;
+  protected String getScheduleName() {
+    return scheduleName;
   }
 
-  protected void setName(String name) {
-    this.name = name;
+  protected void setScheduleName(String scheduleName) {
+    this.scheduleName = scheduleName;
   }
 
   protected String getInfoUrl() {
@@ -42,9 +42,9 @@ public class ObjectDTO {
     this.division = division;
   }
 
-  protected ObjectDTO(int sortNo, String name, String infoUrl) {
+  protected ObjectDTO(int sortNo, String scheduleName, String infoUrl) {
     this.sortNo = sortNo;
-    this.name = name;
+    this.scheduleName = scheduleName;
     this.infoUrl = infoUrl;
   }
 

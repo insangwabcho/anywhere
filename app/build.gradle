@@ -28,4 +28,5 @@ dependencies {
     implementation 'com.google.android.gms:play-services-location:15.0.1'
     implementation project(':SDK_release_v1.0')
     compile 'com.google.code.findbugs:jsr305:2.0.1'
+    compile 'com.google.code.gson:gson:2.3.1'
 }
