@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.anywhere.anywhere.R;
+import com.anywhere.anywhere.min.MinActivity;
 
 public class TestActivity extends AppCompatActivity {
 

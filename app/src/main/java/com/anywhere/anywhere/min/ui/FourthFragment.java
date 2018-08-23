@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.anywhere.anywhere.R;
+import com.anywhere.anywhere.insang.src.fragment.SlidingDrawer;
 
 
 /**
@@ -26,6 +27,7 @@ public class FourthFragment extends Fragment implements View.OnClickListener{
     private Button mCreateBtn;
     private String formName;
     private View view;
+    private SlidingDrawer mSlidingDrawer;
 
     public FourthFragment() {
         // Required empty public constructor
@@ -34,7 +36,10 @@ public class FourthFragment extends Fragment implements View.OnClickListener{
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-
+        mSlidingDrawer = (SlidingDrawer) getView().findViewById(R.id.slidingdrawer);
+        mSlidingDrawer.setClosedPostionHeight(300);
+        mSlidingDrawer.setPartlyPositionHeight(0);
+        mSlidingDrawer.setAutoRewindHeight(0);
     }
 
     @Override
@@ -42,6 +47,7 @@ public class FourthFragment extends Fragment implements View.OnClickListener{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fourth_fragment_layout, container, false);
+
     }
 
     @Override
