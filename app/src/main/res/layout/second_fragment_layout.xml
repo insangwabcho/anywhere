@@ -6,11 +6,15 @@
 
 
 
-    <com.google.android.gms.maps.MapView
+   <!-- <com.google.android.gms.maps.MapView
 
         android:id="@+id/map"
 
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" />-->
+    <com.nhn.android.maps.NMapView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/nmap"/>
 
 </LinearLayout>
