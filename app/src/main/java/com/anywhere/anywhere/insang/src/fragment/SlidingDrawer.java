@@ -344,7 +344,7 @@ public class SlidingDrawer extends LinearLayout {
                 mDownY = 0f;
                 break;
             case MotionEvent.ACTION_CANCEL:
-                mVelocityTracker.recycle();
+                    mVelocityTracker.recycle();
                 mVelocity = 0f;
         }
 

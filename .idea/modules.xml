@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SDK_release_v1.0/SDK_release_v1.0.iml" filepath="$PROJECT_DIR$/SDK_release_v1.0/SDK_release_v1.0.iml" />
-      <module fileurl="file://D:/download/AnyWhere/SDK_release_v1.0/SDK_release_v1.0.iml" filepath="D:/download/AnyWhere/SDK_release_v1.0/SDK_release_v1.0.iml" />
       <module fileurl="file://$PROJECT_DIR$/AnyWhere.iml" filepath="$PROJECT_DIR$/AnyWhere.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SDK_release_v1.0/SDK_release_v1.0.iml" filepath="$PROJECT_DIR$/SDK_release_v1.0/SDK_release_v1.0.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
