@@ -81,6 +81,7 @@ public class NMapViewerResourceProvider extends NMapResourceProvider implements
             setBounds(marker, markerId, item);
         }
 
+        Log.i("asdf","here");
         return marker;
     }
 
@@ -109,8 +110,10 @@ public class NMapViewerResourceProvider extends NMapResourceProvider implements
             canvas.drawColor(0x00000000);
 
             marker.draw(canvas);
+
         }
 
+        Log.i("asdf","here2");
         return bitmap;
     }
 
@@ -271,7 +274,7 @@ public class NMapViewerResourceProvider extends NMapResourceProvider implements
 
         Bitmap textBitmap = getBitmapWithText(resourceId, strNumber, fontColor, fontSize, offsetY);
 
-        //Log.i(LOG_TAG, "getDrawableWithNumber: width=" + textBitmap.getWidth() + ", height=" + textBitmap.getHeight() + ", density=" + textBitmap.getDensity());
+        Log.i(LOG_TAG, "getDrawableWithNumber: width=" + textBitmap.getWidth() + ", height=" + textBitmap.getHeight() + ", density=" + textBitmap.getDensity());
 
         // set bounds
         Drawable marker = new BitmapDrawable(mContext.getResources(), textBitmap);
@@ -279,7 +282,7 @@ public class NMapViewerResourceProvider extends NMapResourceProvider implements
             NMapOverlayItem.boundCenter(marker);
         }
 
-        //Log.i(LOG_TAG, "getDrawableWithNumber: width=" + marker.getIntrinsicWidth() + ", height=" + marker.getIntrinsicHeight());
+        Log.i(LOG_TAG, "getDrawableWithNumber: width=" + marker.getIntrinsicWidth() + ", height=" + marker.getIntrinsicHeight());
 
         return marker;
     }
@@ -312,6 +315,7 @@ public class NMapViewerResourceProvider extends NMapResourceProvider implements
 
         }
 
+
         return drawable;
     }
 
@@ -320,7 +324,7 @@ public class NMapViewerResourceProvider extends NMapResourceProvider implements
 
         int width = bitmapBackground.getWidth();
         int height = bitmapBackground.getHeight();
-        //Log.i(LOG_TAG, "getBitmapWithText: width=" + width + ", height=" + height + ", density=" + bitmapBackground.getDensity());
+        Log.i(LOG_TAG, "getBitmapWithText: width=" + width + ", height=" + height + ", density=" + bitmapBackground.getDensity());
 
         Bitmap textBitmap = Bitmap.createBitmap(width, height, BITMAP_CONFIG_DEFAULT);
 
@@ -346,8 +350,8 @@ public class NMapViewerResourceProvider extends NMapResourceProvider implements
             offsetY = offsetY * mScaleFactor + mTempRect.height();
         }
 
-        //Log.i(LOG_TAG, "getBitmapWithText: number=" + number + ", focused=" + focused);
-        //Log.i(LOG_TAG, "getBitmapWithText: offsetX=" + offsetX + ", offsetY=" + offsetY + ", boundsWidth=" + mTempRect.width() + ", boundsHeight=" + mTempRect.height());
+      //  Log.i(LOG_TAG, "getBitmapWithText: number=" + number + ", focused=" + focused);
+        Log.i(LOG_TAG, "getBitmapWithText: offsetX=" + offsetX + ", offsetY=" + offsetY + ", boundsWidth=" + mTempRect.width() + ", boundsHeight=" + mTempRect.height());
 
         // draw text
         canvas.drawText(strNumber, offsetX, offsetY, mTextPaint);

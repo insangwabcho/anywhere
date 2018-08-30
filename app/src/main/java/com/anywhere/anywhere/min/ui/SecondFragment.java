@@ -88,7 +88,8 @@ public class SecondFragment extends Fragment implements View.OnClickListener{
 
         mMapView = (NMapView)getView().findViewById(R.id.nmap);
         mMapView.setClientId(AnyWhere.ClientID);
-
+        mMapContext.setupMapView(mMapView);
+/*
         mMapView.setClickable(true);
         mMapView.setEnabled(true);
         mMapView.setFocusable(true);
@@ -186,7 +187,7 @@ public class SecondFragment extends Fragment implements View.OnClickListener{
         mMapCompassManager = new NMapCompassManager(getActivity());
 
         // create my location overlay
-        mMyLocationOverlay = mOverlayManager.createMyLocationOverlay(mMapLocationManager, mMapCompassManager);
+        mMyLocationOverlay = mOverlayManager.createMyLocationOverlay(mMapLocationManager, mMapCompassManager);*/
     }
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -230,6 +231,7 @@ public class SecondFragment extends Fragment implements View.OnClickListener{
         map.animateCamera(CameraUpdateFactory.zoomTo(10));
         System.out.println("map ready");
     }*/
+/*
 
     @Override
     public void onStart(){
@@ -260,12 +262,13 @@ public class SecondFragment extends Fragment implements View.OnClickListener{
         mMapContext.onDestroy();
         super.onDestroy();
     }
+*/
 
 
 
 
     /* NMapDataProvider Listener */
-    private final NMapActivity.OnDataProviderListener onDataProviderListener = new NMapActivity.OnDataProviderListener() {
+    /*private final NMapActivity.OnDataProviderListener onDataProviderListener = new NMapActivity.OnDataProviderListener() {
 
         @Override
         public void onReverseGeocoderResponse(NMapPlacemark placeMark, NMapError errInfo) {
@@ -294,7 +297,7 @@ public class SecondFragment extends Fragment implements View.OnClickListener{
 
     };
 
-    /* MyLocation Listener */
+    *//* MyLocation Listener *//*
     private final NMapLocationManager.OnLocationChangeListener onMyLocationChangeListener = new NMapLocationManager.OnLocationChangeListener() {
 
         @Override
@@ -331,7 +334,7 @@ public class SecondFragment extends Fragment implements View.OnClickListener{
 
     };
 
-    /* MapView State Change Listener*/
+    *//* MapView State Change Listener*//*
     private final NMapView.OnMapStateChangeListener onMapViewStateChangeListener = new NMapView.OnMapStateChangeListener() {
 
         @Override
@@ -426,7 +429,7 @@ public class SecondFragment extends Fragment implements View.OnClickListener{
 
     };
 
-    /* POI data State Change Listener*/
+    *//* POI data State Change Listener*//*
     private final NMapPOIdataOverlay.OnStateChangeListener onPOIdataStateChangeListener = new NMapPOIdataOverlay.OnStateChangeListener() {
 
         @Override
@@ -556,6 +559,6 @@ public class SecondFragment extends Fragment implements View.OnClickListener{
                // mMapContainerView.requestLayout();
             }
         }
-    }
+    }*/
 
 }
