@@ -67,6 +67,7 @@ public class NMapViewerResourceProvider extends NMapResourceProvider implements
         int resourceId = findResourceIdForMarker(markerId, focused);
         if (resourceId > 0) {
             marker = mContext.getResources().getDrawable(resourceId);
+
         } else {
             resourceId = 4 * markerId;
             if (focused) {
@@ -168,7 +169,7 @@ public class NMapViewerResourceProvider extends NMapResourceProvider implements
     // Resource Ids for single icons
     private final ResourceIdsOnMap mResourceIdsForMarkerOnMap[] = {
             // Spot, Pin icons
-            new ResourceIdsOnMap(NMapPOIflagType.PIN, R.drawable.subwaymark1, R.drawable.subwaymark1),
+            new ResourceIdsOnMap(NMapPOIflagType.PIN, R.drawable.icon1, R.drawable.icon2),
             new ResourceIdsOnMap(NMapPOIflagType.SPOT, R.drawable.subwaymark1, R.drawable.subwaymark1),
 
             // Direction POI icons: From, To
@@ -218,6 +219,8 @@ public class NMapViewerResourceProvider extends NMapResourceProvider implements
     protected void setBounds(Drawable marker, int markerId, NMapOverlayItem item) {
 
         // check shape of the marker to set bounds correctly.
+        //left top right,bottom
+        marker.setBounds(marker.getBounds().left/5,marker.getBounds().top/5, marker.getBounds().right/5, marker.getBounds().bottom/5);
         if (NMapPOIflagType.isBoundsCentered(markerId)) {
             if (marker.getBounds().isEmpty()) {
                 NMapOverlayItem.boundCenter(marker);
@@ -242,31 +245,33 @@ public class NMapViewerResourceProvider extends NMapResourceProvider implements
     public Drawable[] getLocationDot() {
         Drawable[] drawable = new Drawable[2];
 
-        drawable[0] = mContext.getResources().getDrawable(R.drawable.subwaymark1);
-        drawable[1] = mContext.getResources().getDrawable(R.drawable.subwaymark1);
+     //   drawable[0] = mContext.getResources().getDrawable(R.drawable.subwaymark1);
+     //   drawable[1] = mContext.getResources().getDrawable(R.drawable.subwaymark1);
 
         for (int i = 0; i < drawable.length; i++) {
             int w = drawable[i].getIntrinsicWidth() / 2;
             int h = drawable[i].getIntrinsicHeight() / 2;
 
             drawable[i].setBounds(-w, -h, w, h);
-        }
 
+        }
         return drawable;
+
     }
 
     @Override
     public Drawable getDirectionArrow() {
 
         Drawable drawable = mContext.getResources().getDrawable(R.drawable.subwaymark1);
-
+        int w =0;
+        int h =0;
         if (drawable != null) {
-            int w = drawable.getIntrinsicWidth() / 2;
-            int h = drawable.getIntrinsicHeight() / 2;
+            w = drawable.getIntrinsicWidth() / 2;
+            h = drawable.getIntrinsicHeight() / 2;
 
             drawable.setBounds(-w, -h, w, h);
         }
-
+        Log.i(LOG_TAG, "getDrawableWithNumber: width=" + w + ", height=" +h);
         return drawable;
     }
 
@@ -280,6 +285,7 @@ public class NMapViewerResourceProvider extends NMapResourceProvider implements
         Drawable marker = new BitmapDrawable(mContext.getResources(), textBitmap);
         if (marker != null) {
             NMapOverlayItem.boundCenter(marker);
+
         }
 
         Log.i(LOG_TAG, "getDrawableWithNumber: width=" + marker.getIntrinsicWidth() + ", height=" + marker.getIntrinsicHeight());
@@ -305,7 +311,7 @@ public class NMapViewerResourceProvider extends NMapResourceProvider implements
         Drawable drawable = null;
 
         if (markerId >= NMapPOIflagType.NUMBER_BASE && markerId < NMapPOIflagType.NUMBER_END) { // Direction Number icons
-            int resourceId = (focused) ? R.drawable.subwaymark1 : R.drawable.subwaymark1;
+            int resourceId = (focused) ? R.drawable.icon1 : R.drawable.icon1;
             int fontColor = (focused) ? POI_FONT_COLOR_ALPHABET : POI_FONT_COLOR_NUMBER;
 
             String strNumber = String.valueOf(markerId - NMapPOIflagType.NUMBER_BASE);
@@ -366,12 +372,12 @@ public class NMapViewerResourceProvider extends NMapResourceProvider implements
             NMapPOIitem poiItem = (NMapPOIitem)item;
 
             if (poiItem.showRightButton()) {
-                Drawable drawable = mContext.getResources().getDrawable(R.drawable.subwaymark1);
+                Drawable drawable = mContext.getResources().getDrawable(R.drawable.icon1);
                 return drawable;
             }
         }
 
-        Drawable drawable = mContext.getResources().getDrawable(R.drawable.subwaymark1);
+        Drawable drawable = mContext.getResources().getDrawable(R.drawable.icon1);
 
         return drawable;
     }

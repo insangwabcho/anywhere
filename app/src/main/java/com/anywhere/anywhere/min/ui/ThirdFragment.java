@@ -81,6 +81,7 @@ public class  ThirdFragment extends Fragment implements View.OnClickListener{
         poiData.beginPOIdata(2);
         poiData.addPOIitem(127.0630205, 37.5091300, "Pizza 777-111", markerId, 0);
         poiData.addPOIitem(127.061, 37.51, "Pizza 123-456", markerId, 0);
+
         poiData.endPOIdata();
 
 // create POI data overlay
