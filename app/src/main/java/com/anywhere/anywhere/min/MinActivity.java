@@ -31,6 +31,9 @@ public class MinActivity extends AppCompatActivity implements View.OnClickListen
         checkPermision(AnyWhere.PERMISSIONS);
 
         mSlidingDrawer= (SlidingDrawer)findViewById(R.id.main_slidingdrawer);
+        mSlidingDrawer.setClosedPostionHeight(300);
+        mSlidingDrawer.setPartlyPositionHeight(0);
+        mSlidingDrawer.setAutoRewindHeight(0);
 
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setIcon(getApplicationContext().getDrawable(R.drawable.icon1)));

@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:elevation="6dp"
-            android:minHeight="?attr/actionBarSize"
+            android:minHeight="?android:attr/actionBarSize"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
         <android.support.v4.view.ViewPager
@@ -36,7 +36,8 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:fillViewport="true">
 
             <LinearLayout
                 android:id="@+id/ll_content"
@@ -50,15 +51,15 @@
                 <ImageView
                     android:id="@+id/imageView"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="150dp"
                     android:layout_weight="2"
-                    app:srcCompat="@mipmap/ic_launcher" />
+                    app:srcCompat="@drawable/travle_timetable" />
 
                 <fragment
                     android:id="@+id/fragment2"
-                    android:name="com.anywhere.anywhere.min.ui.TimeLineFragment"
+                    android:name="com.anywhere.anywhere.min.ui.TimelineFragment"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="8" />
 
             </LinearLayout>

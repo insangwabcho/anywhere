@@ -16,14 +16,14 @@ import com.anywhere.anywhere.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TimetableFragment extends Fragment implements View.OnClickListener{
+public class TimelineFragment extends Fragment implements View.OnClickListener{
 
     private RecyclerView rvContacts;
     private Button mCreateBtn;
     private String formName;
     private View view;
 
-    public TimetableFragment() {
+    public TimelineFragment() {
         // Required empty public constructor
     }
     @Override
@@ -37,7 +37,7 @@ public class TimetableFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.insang_graph_test, container, false);
+        return inflater.inflate(R.layout.insang_timeline_detail, container, false);
     }
 
     @Override

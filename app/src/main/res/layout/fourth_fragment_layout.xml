@@ -1,45 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/darker_gray"
     >
 
-    <com.anywhere.anywhere.insang.src.fragment.SlidingDrawer
-        android:id="@+id/slidingdrawer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/transparent">
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:id="@+id/ll_content"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:weightSum="1">
-
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    >
-
-                    <fragment
-                        android:id="@+id/fragment4"
-                        android:name="com.anywhere.anywhere.min.ui.TimetableFragment"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" />
-                </HorizontalScrollView>
-
-            </LinearLayout>
-        </ScrollView>
-
-    </com.anywhere.anywhere.insang.src.fragment.SlidingDrawer>
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="fourthfragment" />
 
 </LinearLayout>
