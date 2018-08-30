@@ -12,6 +12,7 @@ import android.view.View;
 
 
 import com.anywhere.anywhere.R;
+import com.anywhere.anywhere.insang.src.fragment.SlidingDrawer;
 import com.anywhere.anywhere.min.PageAdapter;
 import com.anywhere.anywhere.min.config.AnyWhere;
 
@@ -20,12 +21,16 @@ public class MinActivity extends AppCompatActivity implements View.OnClickListen
     private ViewPager viewPager;
     private TabLayout tabLayout;
     private final int MY_PERMISSION_REQUEST_STORAGE = 100;
+    private SlidingDrawer mSlidingDrawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.min_activity);
 
+        checkPermision(AnyWhere.PERMISSIONS);
+
+        mSlidingDrawer= (SlidingDrawer)findViewById(R.id.main_slidingdrawer);
 
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setIcon(getApplicationContext().getDrawable(R.drawable.icon1)));
@@ -44,6 +49,15 @@ public class MinActivity extends AppCompatActivity implements View.OnClickListen
                 viewPager.setCurrentItem(tab.getPosition());
                 tabLayout.getTabAt(tab.getPosition()).getIcon().setAlpha(50);
 
+                System.out.println(tab.getPosition());
+
+                if (tab.getPosition() == 1){
+                    mSlidingDrawer.setVisibility(View.VISIBLE);
+                }
+                else{
+                    mSlidingDrawer.setVisibility(View.INVISIBLE);
+                }
+
             }
 
             @Override
@@ -57,11 +71,6 @@ public class MinActivity extends AppCompatActivity implements View.OnClickListen
             }
         });
         setViewPager();
-        checkPermision(AnyWhere.PERMISSIONS);
-
-
-
-
 
     }
 
