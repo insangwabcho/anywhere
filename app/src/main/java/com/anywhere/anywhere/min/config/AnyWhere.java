@@ -1,11 +1,14 @@
 package com.anywhere.anywhere.min.config;
 
+import android.graphics.Rect;
+
 /**
  * Created by ken13 on 2018-08-18.
  */
 
 public class AnyWhere {
 
+    public  static Rect size = new Rect(50,50,50,50);
     public static final String[] PERMISSIONS = {
 
             "android.permission.MODIFY_AUDIO_SETTINGS",

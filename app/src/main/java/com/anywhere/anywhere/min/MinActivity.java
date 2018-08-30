@@ -50,6 +50,8 @@ public class MinActivity extends AppCompatActivity implements View.OnClickListen
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
+
+                System.out.println("current: "+ tab.getPosition());
                 tabLayout.getTabAt(tab.getPosition()).getIcon().setAlpha(50);
 
                 //2번째 탭일때만 slidingdrawer보이도록 수정 --insang 18.08.30

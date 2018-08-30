@@ -3,6 +3,7 @@ package com.anywhere.anywhere.min.ui;
 
 
 
+import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,6 +14,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
+import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -90,6 +92,7 @@ public class  ThirdFragment extends Fragment implements View.OnClickListener{
         //poiDataOverlay.setOnStateChangeListener(onPOIdataStateChangeListener);
         PlaceAutocompleteFragment autocompleteFragment = (PlaceAutocompleteFragment)
                 getActivity().getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
+        autocompleteFragment.getView().setBackgroundColor(Color.WHITE);
 
         autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
@@ -128,12 +131,20 @@ public class  ThirdFragment extends Fragment implements View.OnClickListener{
             Log.i("log", "onFocusChanged: ");
         }
     }
-
+    static View rootView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.third_fragment_layout, container, false);
+        if( rootView == null) {
+            rootView = inflater.inflate(R.layout.third_fragment_layout, container, false);
+        }
+        // mapView = (MapView) view.findViewById(R.id.map);
+
+        // mapView.getMapAsync(this);
+
+
+        return rootView;
     }
 
     @Override

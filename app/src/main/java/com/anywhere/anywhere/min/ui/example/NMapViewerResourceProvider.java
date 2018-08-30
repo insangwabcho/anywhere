@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.anywhere.anywhere.R;
+import com.anywhere.anywhere.min.config.AnyWhere;
 import com.nhn.android.maps.NMapOverlayItem;
 import com.nhn.android.maps.overlay.NMapPOIitem;
 import com.nhn.android.mapviewer.overlay.NMapResourceProvider;
@@ -67,6 +68,7 @@ public class NMapViewerResourceProvider extends NMapResourceProvider implements
         int resourceId = findResourceIdForMarker(markerId, focused);
         if (resourceId > 0) {
             marker = mContext.getResources().getDrawable(resourceId);
+          //  System.out.println("1 "+marker.getBounds().toString());
 
         } else {
             resourceId = 4 * markerId;
@@ -75,14 +77,17 @@ public class NMapViewerResourceProvider extends NMapResourceProvider implements
             }
 
             marker = getDrawableForMarker(markerId, focused, item);
+          //  System.out.println("2 "+marker.getBounds().toString());
         }
 
         // set bounds
         if (marker != null) {
+
             setBounds(marker, markerId, item);
         }
 
         Log.i("asdf","here");
+
         return marker;
     }
 
@@ -169,7 +174,7 @@ public class NMapViewerResourceProvider extends NMapResourceProvider implements
     // Resource Ids for single icons
     private final ResourceIdsOnMap mResourceIdsForMarkerOnMap[] = {
             // Spot, Pin icons
-            new ResourceIdsOnMap(NMapPOIflagType.PIN, R.drawable.icon1, R.drawable.icon2),
+            new ResourceIdsOnMap(NMapPOIflagType.PIN, R.drawable.locationmark, R.drawable.locationmark),
             new ResourceIdsOnMap(NMapPOIflagType.SPOT, R.drawable.subwaymark1, R.drawable.subwaymark1),
 
             // Direction POI icons: From, To
@@ -220,7 +225,12 @@ public class NMapViewerResourceProvider extends NMapResourceProvider implements
 
         // check shape of the marker to set bounds correctly.
         //left top right,bottom
-        marker.setBounds(marker.getBounds().left/5,marker.getBounds().top/5, marker.getBounds().right/5, marker.getBounds().bottom/5);
+
+        System.out.println(marker.getBounds().toString());
+
+        //marker.setBounds(marker.getBounds().left/5,marker.getBounds().top/5,marker.getBounds().right/5,marker.getBounds().bottom/5 );
+        marker.setBounds(-90,-180,90,0);
+        System.out.println(marker.getBounds().toString());
         if (NMapPOIflagType.isBoundsCentered(markerId)) {
             if (marker.getBounds().isEmpty()) {
                 NMapOverlayItem.boundCenter(marker);
@@ -243,26 +253,29 @@ public class NMapViewerResourceProvider extends NMapResourceProvider implements
 
     @Override
     public Drawable[] getLocationDot() {
-        Drawable[] drawable = new Drawable[2];
+      /*  Drawable[] drawable = new Drawable[2];
 
      //   drawable[0] = mContext.getResources().getDrawable(R.drawable.subwaymark1);
      //   drawable[1] = mContext.getResources().getDrawable(R.drawable.subwaymark1);
 
+        int w = 0;
+        int h = 0;
         for (int i = 0; i < drawable.length; i++) {
-            int w = drawable[i].getIntrinsicWidth() / 2;
-            int h = drawable[i].getIntrinsicHeight() / 2;
+            w = drawable[i].getIntrinsicWidth() / 2;
+            h = drawable[i].getIntrinsicHeight() / 2;
 
+            System.out.println("getDrawableWithNumber: width=" + w + ", height=" +h);
             drawable[i].setBounds(-w, -h, w, h);
 
         }
-        return drawable;
-
+        return drawable;*/
+        return null;
     }
 
     @Override
     public Drawable getDirectionArrow() {
 
-        Drawable drawable = mContext.getResources().getDrawable(R.drawable.subwaymark1);
+   /*     Drawable drawable = mContext.getResources().getDrawable(R.drawable.subwaymark1);
         int w =0;
         int h =0;
         if (drawable != null) {
@@ -272,7 +285,8 @@ public class NMapViewerResourceProvider extends NMapResourceProvider implements
             drawable.setBounds(-w, -h, w, h);
         }
         Log.i(LOG_TAG, "getDrawableWithNumber: width=" + w + ", height=" +h);
-        return drawable;
+        return drawable;*/
+        return null;
     }
 
     public Drawable getDrawableWithNumber(int resourceId, String strNumber, float offsetY, int fontColor, float fontSize) {

@@ -85,10 +85,10 @@ public class SecondFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
+/*
         mMapView = (NMapView)getView().findViewById(R.id.nmap);
         mMapView.setClientId(AnyWhere.ClientID);
-        mMapContext.setupMapView(mMapView);
+        mMapContext.setupMapView(mMapView);*/
 /*
         mMapView.setClickable(true);
         mMapView.setEnabled(true);
@@ -192,8 +192,8 @@ public class SecondFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mMapContext =  new NMapContext(super.getActivity());
-        mMapContext.onCreate();
+      //  mMapContext =  new NMapContext(super.getActivity());
+     //   mMapContext.onCreate();
 
     }
     @Override
