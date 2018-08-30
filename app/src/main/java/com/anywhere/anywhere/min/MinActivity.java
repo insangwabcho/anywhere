@@ -52,8 +52,7 @@ public class MinActivity extends AppCompatActivity implements View.OnClickListen
                 viewPager.setCurrentItem(tab.getPosition());
                 tabLayout.getTabAt(tab.getPosition()).getIcon().setAlpha(50);
 
-                System.out.println(tab.getPosition());
-
+                //2번째 탭일때만 slidingdrawer보이도록 수정 --insang 18.08.30
                 if (tab.getPosition() == 1){
                     mSlidingDrawer.setVisibility(View.VISIBLE);
                 }
