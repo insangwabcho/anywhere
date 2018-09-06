@@ -1,20 +1,23 @@
 package com.anywhere.anywhere.min;
 
-import android.annotation.SuppressLint;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.ListFragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 
 import com.anywhere.anywhere.R;
+import com.anywhere.anywhere.insang.src.adapter.TripListAdapter;
 import com.anywhere.anywhere.insang.src.fragment.SlidingDrawer;
-import com.anywhere.anywhere.min.PageAdapter;
+import com.anywhere.anywhere.insang.models.dto.TripDTO;
 import com.anywhere.anywhere.min.config.AnyWhere;
+
+import java.util.ArrayList;
 
 public class MinActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -45,7 +48,6 @@ public class MinActivity extends AppCompatActivity implements View.OnClickListen
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
 
-
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -54,13 +56,19 @@ public class MinActivity extends AppCompatActivity implements View.OnClickListen
                 System.out.println("current: "+ tab.getPosition());
                 tabLayout.getTabAt(tab.getPosition()).getIcon().setAlpha(50);
 
-                //2번째 탭일때만 slidingdrawer보이도록 수정 --insang 18.08.30
-                if (tab.getPosition() == 1){
-                    mSlidingDrawer.setVisibility(View.VISIBLE);
-                }
-                else{
-                    mSlidingDrawer.setVisibility(View.INVISIBLE);
-                }
+                //region slidingrawer 컨트롤
+
+                /* 2번째 탭일때만 slidingdrawer보이도록 수정 --insang 18.08.30 */
+                /* fragment에서 컨트롤하도록 변경 --insang 18.09.06 */
+
+//                if (tab.getPosition() == 1){
+//                    mSlidingDrawer.setVisibility(View.VISIBLE);
+//                }
+//                else{
+//                    mSlidingDrawer.setVisibility(View.INVISIBLE);
+//                }
+
+                //endregion
 
             }
 
@@ -118,10 +126,32 @@ public class MinActivity extends AppCompatActivity implements View.OnClickListen
         tabLayout.getTabAt(0).getIcon().setAlpha(50);
         viewPager.getAdapter().notifyDataSetChanged();
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        viewPager.setFocusable(false);
 
     }
     @Override
     public void onClick(View view) {
 
     }
+
+    /* fragment에서 slidingdrawer 컨트롤을 위해 객체를 넘기는 메소드 작성 --insang 18.09.06 */
+    public SlidingDrawer getDrawer(){
+        return mSlidingDrawer;
+    }
+
+    private void getTrip(){
+        ArrayList<TripDTO> tripList= new ArrayList<>();
+
+        for (int i=0; i<10; i++){
+            TripDTO item= new TripDTO(i+1, "trip"+ (i+1));
+            tripList.add(item);
+        }
+
+        TripListAdapter adapter= new TripListAdapter(this, R.layout.insang_trip_list, tripList);
+
+        ListFragment tripFrag= (ListFragment) getSupportFragmentManager().findFragmentById(R.id.viewpager);
+        tripFrag.setListAdapter(adapter);
+    }
+
+
 }

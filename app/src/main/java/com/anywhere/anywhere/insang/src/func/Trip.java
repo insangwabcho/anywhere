@@ -1,7 +1,7 @@
 //region # 18.08.18 생성 --insang
 // endregion
 
-package com.anywhere.anywhere.insang.src.function;
+package com.anywhere.anywhere.insang.src.func;
 
 import com.anywhere.anywhere.insang.models.dto.DayScheduleDTO;
 import com.anywhere.anywhere.insang.models.dto.ObjectDTO;

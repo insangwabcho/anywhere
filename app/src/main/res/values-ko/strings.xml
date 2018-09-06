@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="trip_list_empty">
+        계획된 여행이 없습니다
+    </string>
+
+</resources>

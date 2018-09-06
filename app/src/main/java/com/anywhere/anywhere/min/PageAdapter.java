@@ -1,14 +1,14 @@
 package com.anywhere.anywhere.min;
 
 import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentManager;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.app.ListFragment;
 
 
+import com.anywhere.anywhere.insang.src.fragment.TripFragment;
 import com.anywhere.anywhere.min.ui.FirstFragment;
 import com.anywhere.anywhere.min.ui.FourthFragment;
-import com.anywhere.anywhere.min.ui.SecondFragment;
 import com.anywhere.anywhere.min.ui.ThirdFragment;
 
 /**
@@ -16,7 +16,9 @@ import com.anywhere.anywhere.min.ui.ThirdFragment;
  */
 public class PageAdapter extends FragmentStatePagerAdapter
 {
+
     private Activity Activity;
+
     public PageAdapter(android.support.v4.app.FragmentManager fm, Activity activity)
     {
         super(fm);
@@ -24,14 +26,14 @@ public class PageAdapter extends FragmentStatePagerAdapter
 
     }
     @Override
-    public android.support.v4.app.Fragment getItem(int position)
+    public Fragment getItem(int position)
     {
-        switch(position)
-        {
+        switch (position) {
             case 0:
                 return new FirstFragment();
             case 1:
-                return new SecondFragment();
+//              return new SecondFragment();
+                return new TripFragment();
             case 2:
                 return new ThirdFragment();
             case 3:

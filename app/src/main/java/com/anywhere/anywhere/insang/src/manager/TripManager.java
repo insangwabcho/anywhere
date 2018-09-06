@@ -4,7 +4,7 @@ package com.anywhere.anywhere.insang.src.manager;
 
 import com.anywhere.anywhere.insang.models.dto.DayScheduleDTO;
 import com.anywhere.anywhere.insang.models.dto.ObjectDTO;
-import com.anywhere.anywhere.insang.src.function.Trip;
+import com.anywhere.anywhere.insang.src.func.Trip;
 
 import java.util.List;
 

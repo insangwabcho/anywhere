@@ -5,7 +5,7 @@ import android.content.Context;
 
 import com.anywhere.anywhere.insang.models.dto.PathDTO;
 import com.anywhere.anywhere.insang.models.dto.PlaceDTO;
-import com.anywhere.anywhere.insang.src.function.Route;
+import com.anywhere.anywhere.insang.src.func.Route;
 
 public class PathManager extends Route {
 
